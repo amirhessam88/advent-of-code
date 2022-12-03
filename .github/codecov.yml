@@ -1,0 +1,14 @@
+# Reference: https://docs.codecov.com/docs/commit-status
+
+codecov:
+  branch: master
+
+coverage:
+  range: 50..90
+  round: down
+  precision: 2
+  status:
+    project:
+      default:
+        threshold: 1%
+    patch: off
