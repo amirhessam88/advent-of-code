@@ -1,0 +1,102 @@
+[tool.poetry]
+name = "advent-of-code"
+# following calver here https://calver.org/
+version = "2022.12.04"
+description = "Advent of code solutions in Python"
+license = "MIT"
+authors = [
+    "Amirhessam Tahmassebi <me@amirhessam.com>",
+]
+maintainers = [
+    "Amirhessam Tahmassebi <me@amirhessam.com>",
+]
+readme = "README.md"
+repository = "https://github.com/amirhessam88/advent-of-code"
+keywords = ["python", "advent-of-code"]
+
+packages = [
+    { include = "aoc", from = "src" },
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+
+
+[tool.poetry.dev-dependencies]
+
+# --- package-management ---
+pip = "^22.3"
+
+# --- task-management ---
+poethepoet = "^0.16"
+
+# --- formatting ---
+add-trailing-comma = "^2.2"
+isort = "^5.10"
+black = "^22.10"
+
+# --- linting ---
+flake8 = "^5.0"
+flake8-commas = "^2.1"
+flake8-annotations = "^2.9"
+flake8-tidy-imports = "^4.8"
+flake8-type-checking = "^2.3"
+flake8-typing-imports = "^1.12"
+flake8-use-fstring = "^1.4"
+pep8-naming = "^0.13"
+
+# --- type-checking ---
+mypy = "^0.991"
+pandas-stubs = "^1.5"
+data-science-types = "^0.2"
+
+# --- unit-testing ---
+pytest = "^7.2"
+pytest-cov = "^4.0"
+pytest-mock = "^3.10"
+mock = "^4.0"
+coverage = "^6.5"
+assertpy = "^1.1"
+
+# --- docs ----
+sphinx = "^5.3"
+sphinx-autoapi = "^1.9"
+sphinx_design = "^0.3"
+myst-parser = "^0.18"
+furo = "^2022.9"
+
+# --- jupyter ---
+jupytext = "^1.14"
+
+# --- monitoring ---
+watchdog = "^2.1"
+
+
+[build-system]
+requires = ["poetry-core>=1.3.2"]
+build-backend = "poetry.core.masonry.api"
+
+
+# -- try `poe --help` for options
+[tool.poe.tasks]
+clean = { cmd = "rm -rf .coverage dist/ .mypy_cache/ .pytest_cache/ .tox/ htmlcov/ xmlcov/ **/__pycache__/ **/.ipynb_checkpoints/", help = "Remove all the ignored directories/files" }
+add-trailing-comma = { cmd = "poetry run add-trailing-comma --exit-zero-even-if-changed src/**/*.py tests/**/*.py", help = "Format code style via add-trailing-comma" }
+black = { cmd = "poetry run black --line-length 100 .", help = "Format code style via black" }
+isort = { cmd = "poetry run isort --profile black .", help = "Sort imported libraries via isort" }
+flake8 = { cmd = "poetry run flake8 --verbose --benchmark --color always --config .flake8", help = "Lint code via flake8" }
+mypy = { cmd = "poetry run mypy --config-file mypy.ini", help = "Lint types via mypy" }
+test = { cmd = "poetry run python -m pytest --cov=src --cov-report=term --cov-report=html --cov-report=xml --cov-config=.coveragerc --tb=short -ra -v", help = "Run unit-tests via pytest" }
+sphinx = { cmd = "poetry run sphinx-build -b html docs/ docs/_build", help = "Build API docs via sphinx" }
+tox = { cmd = "poetry run tox -c tox.ini .", help = "Test environments via tox" }
+format = [
+    { ref = "add-trailing-comma" },
+    { ref = "isort" },
+    { ref = "black" },
+]
+check = [
+    { cmd = "poe black --check" },
+    { cmd = "poe isort --check-only" },
+    { cmd = "poe flake8 ." },
+    { cmd = "poe mypy ." },
+]
