@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "advent-of-code"
 # following calver here https://calver.org/
-version = "2022.12.04"
+version = "2022.12.05"
 description = "Advent of code solutions in Python"
 license = "MIT"
 authors = [

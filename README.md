@@ -19,11 +19,11 @@
 
 # Year: 2022
 
-| Day | Question                | Part1 | Part2  |
-| --- | ----------------------- | ----- | ------ |
-| 1   | Calorie Counting        | 67016 | 200116 |
-| 2   | Rock Paper Scissors     | 10404 | 10334  |
-| 3   | Rucksack Reorganization | 8240  | 2587   |
-| 4   | Camp Cleanup            | 464   | 770    |
-
+| Day | Question                | Part1     | Part2     |
+| --- | ----------------------- | --------- | --------- |
+| 1   | Calorie Counting        | 67016     | 200116    |
+| 2   | Rock Paper Scissors     | 10404     | 10334     |
+| 3   | Rucksack Reorganization | 8240      | 2587      |
+| 4   | Camp Cleanup            | 464       | 770       |
+| 5   | Supply Stacks           | QPJPLMNNR | BQDNWJPVJ |
 
