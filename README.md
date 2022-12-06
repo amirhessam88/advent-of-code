@@ -26,4 +26,4 @@
 | 3   | Rucksack Reorganization | 8240      | 2587      |
 | 4   | Camp Cleanup            | 464       | 770       |
 | 5   | Supply Stacks           | QPJPLMNNR | BQDNWJPVJ |
-
+| 6   | Tuning Trouble          | 1142      | 2803      |
