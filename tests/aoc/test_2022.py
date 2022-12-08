@@ -2,7 +2,7 @@ import importlib.resources as pkg_resources
 
 from assertpy import assert_that
 
-from aoc.year_2022 import day1, day2, day3, day4, day5, day6, day7
+from aoc.year_2022 import day1, day2, day3, day4, day5, day6, day7, day8
 from tests.resources import inputs_2022
 from tests.utils import _clean_test_data
 
@@ -54,3 +54,10 @@ def test_day_7() -> None:
         data = _clean_test_data(f)
         assert_that(day7.part1(data)).is_equal_to(1581595)
         assert_that(day7.part2(data)).is_equal_to(1544176)
+
+
+def test_day_8() -> None:
+    with pkg_resources.open_text(inputs_2022, "day8.txt") as f:
+        data = _clean_test_data(f)
+        assert_that(day8.part1(data)).is_equal_to(1776)
+        assert_that(day8.part2(data)).is_equal_to(234416)
