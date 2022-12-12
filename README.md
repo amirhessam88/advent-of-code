@@ -29,3 +29,5 @@
 | 6   | Tuning Trouble          | 1142      | 2803      |
 | 7   | No Space Left On Device | 1581595   | 1544176   |
 | 8   | Treetop Tree House      | 1776      | 234416    |
+| 9   | Rope Bridge             | TBD       | TBD       |
+| 10  | Cathode-Ray Tube        | 17180     | REHPRLUB  |
